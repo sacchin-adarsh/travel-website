@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <title>Italy-Nomad Speaks</title>
+    <link rel="stylesheet" href="E:\Website\css\style.css">
+    </head>
+    <style>
+        .slide{
+            display: none;
+        }
+    
+    </style>
+<div class="header-div">
+    <header class="header">
+        <a href="E:\Website\index.html">NOMAD SPEAKS</a>
+        <a href="E:\Website\index.html"><img src="E:\Website\img\logo.jpg" ></a><hr style="width:80%">
+     </header>
+      <center><nav class="menu">
+          
+        <a href="E:\Website\index.html">HOME</a>
+        <a href="E:\Website\about.html">ABOUT US</a>
+        <a href="\E:\Website\destinations.html">DESTINATIONS</a>
+        <a href="E:\Website\traveltips.html">TRAVEL TIPS</a>
+        <a href="E:\Website\contact.html">CONTACT</a>
+      </nav></center>
+    
+    </div>
+    
+    
+    <body>
+    <div class="travel1-container">
+    <div class="booking">
+    <h2>Meticulous Italy - Soulmate Special</h2>
+   
+   <div class="images">
+   <img src="E:\Website\img\Italy1.jpg" alt="" class="slide">
+   <img src="E:\Website\img\Italy2.jpg" alt="" class="slide">
+   <img src="E:\Website\img\Italy3.jpg" alt="" class="slide">
+   <img src="E:\Website\img\Italy4.jpg" alt="" class="slide">
+   <img src="E:\Website\img\Italy5.jpg" alt="" class="slide">
+    </div>
+    
+    <script>
+        var image = 0;
+       
+        
+        
+        function change(){
+            var i;
+             var holder = document.getElementsByClassName("slide");
+            for(i = 0; i < holder.length; i++)
+            {
+                holder[i].style.display = "none";
+            }
+        image++;
+        if(image > holder.length)
+            {
+                image = 1;
+            }
+        holder[image-1].style.display = "block";
+            
+        setTimeout(change,3000);
+        }
+        
+      window.onload=change;
+        </script> 
+
+        </div>
+        <h2>Travel and Accomodation</h2>
+        
+        <p><b>Day 1:</b>&nbsp;&nbsp; Arrival in Rome - Fiumicino Apt via flight
+&nbsp;&nbsp;|Check-in to Hotel in Rome</p><hr>
+        <p><b>Day 2:</b>&nbsp;&nbsp;Breakfast at Hotel in Rome
+&nbsp;&nbsp; |City Sightseeing Rome Hop-on Hop-off
+</p><hr>
+        <p><b>Day 3:</b>&nbsp;&nbsp; Breakfast at Hotel in Rome</p><hr>
+        <p><b>Day 4:</b>&nbsp;&nbsp; Breakfast at Hotel in Rome
+&nbsp;&nbsp; |Checkout from Hotel in Rome
+&nbsp;&nbsp; |Check-in to Hotel in Florence
+</p><hr>
+        <p><b>Day 5:</b>&nbsp;&nbsp; Breakfast at Hotel in Florence</p><hr>
+        <p><b>Day 6:</b>&nbsp;&nbsp;Breakfast at Hotel in Florence&nbsp;&nbsp;|Checkout from Hotel in Florence&nbsp;&nbsp;|Check-in to Hotel in Venice</p><hr>
+        <p><b>Day 7:</b>&nbsp;&nbsp;Breakfast at Hotel in Venice&nbsp;&nbsp;|Departure from Venice via flight</p><hr>
+        
+        <div class="form">
+  
+        <form  action="E:\Website\Payment.html" name="Italy" onsubmit="validate();" method="post">
+        
+        <label for="Name">Name</label><br>
+        <input id=name type="text" name=name ><br>
+           <label for="Email">Email</label><br>
+        <input id=email type="email" name=email><br>
+        <label for="Mobile No" >Mobile No</label><br>
+        <input id=mobile type=tel name=mobile  pattern="[+]{1}[0-9]{2}[0-9]{10}" ><br>
+            <label for="No.of Adults" >No.of Adults</label>
+            <input  type="text" id=adults name="adults" min=1    oninput="totalPrice()">
+              <label for="No.of Children" >No.of Children</label>
+            <input  type="text" id=child name="child"   min=0 oninput="totalPrice()">
+            <label for="Date of Journey" >Date of Journey</label>   
+            <input type="date" id="date" name="date">
+            <label for="Total Price" >Total Price</label>
+            <input   id=price name=price type="text" readonly>&#8377;<br><br>
+      <input id="check" type="checkbox" style="height:10px  width:10px" name="check" >I accept to the terms and conditions<br><br>
+        <button type="submit"  >Confirm</button> 
+            
+            
+            
+        </form>   </div><br>
+        <hr>
+    
+
+        </div>
+        <script>
+        function totalPrice()
+            {
+            
+            var val1 = document.getElementById('adults').value;
+            var val2 = document.getElementById('child').value;
+            var total = val1 * 72648 + val2 * (72648/2);
+            var h = document.getElementById('price');
+            h.value = total;
+            }
+        
+        function validate()
+            {
+                
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var mobile = document.getElementById('mobile').value;
+            var adults = document.getElementById('adults').value;
+            var child = document.getElementById('child').value;
+            var check = document.getElementById('check');  
+            if(name == "")
+                {
+                    alert('Please fill in your name!');
+                    return false;
+                }else
+            if(email == "")
+                {
+                    alert('Please enter a valid mail id!');
+                    return false;
+                }else
+            if(mobile == "" || mobile.length < 10 )
+                {
+                    alert('Please enter a valid number!');
+                    return false;
+                }else
+            if(adults == "" )
+                {
+                    
+                    alert('This field cannot be empty!');
+                    return false;
+                }else
+            if(adults > 10)
+                {
+                    alert('The number exceeds the maximum allowed!')
+                    return false;
+                }else
+            if( !check.checked )
+                {
+                    alert('Please agree to our terms and conditons');
+                    return false;
+                }
+                else
+                {
+                alert('Thank you !Please complete the payment to confirm your booking' );
+                window.location.reload();
+                
+                }
+                
+            }
+        
+        </script>
+<footer class="footer">    
+     Copyright &copy; 2020 .  Nomad Speaks  .  Sacchin Adarsh    
+</footer>
+      
+      
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
