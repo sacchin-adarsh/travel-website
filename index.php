@@ -101,7 +101,7 @@ border:1px solid grey;
                      
 				} else {
 					echo "Please enter correct otp.";
-                    header("Location: File:///Website/destinations.html");
+                    header("Location: destinations.html");
 				}
 			}
 		?>
@@ -126,7 +126,7 @@ border:1px solid grey;
                 </div>
             </div>
             </form>
-            <form method="POST" action="" onsubmit="localhost\Website\destination.html">
+            <form method="POST" action="" onsubmit="destination.html">
             <div class="row">
                 <div class="col-sm-9 form-group">
                     <label for="otp">Enter OTP:</label><br><br>
